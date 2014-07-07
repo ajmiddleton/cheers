@@ -41,7 +41,7 @@ bdayStr = bdayStr.split('/')
 bday = Time.new(bdayStr[2], bdayStr[0], bdayStr[1])
 now = Time.now
 
-if bday.month > now.month
+if bday.month >= now.month && bday.day > now.day
   bday = Time.new(now.year, bdayStr[0], bdayStr[1])
 else
   bday = Time.new(now.year+1, bdayStr[0], bdayStr[1])
