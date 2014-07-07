@@ -30,6 +30,7 @@ name.each_char do |char|
 end
 
 puts "Hey #{name}, what's your birthday?"
+puts "mm/dd/yyyy"
 bdayStr = gets.chomp
 
 if bdayStr.empty?
