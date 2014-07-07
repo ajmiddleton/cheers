@@ -42,10 +42,16 @@ bdayStr = bdayStr.split('/')
 bday = Time.new(bdayStr[2], bdayStr[0], bdayStr[1])
 now = Time.now
 
-if bday.month >= now.month && bday.day > now.day
+if bday.month >= now.month && bday.day >= now.day
   bday = Time.new(now.year, bdayStr[0], bdayStr[1])
 else
   bday = Time.new(now.year+1, bdayStr[0], bdayStr[1])
 end
-days = (bday - now).to_i / (24*3600)
-puts "Awesome! Your birthday is in #{days} days! Happy birthday in advance!"
+
+days = ((bday - now).to_i / (24*3600)) + 1
+
+if days > 0
+  puts "Awesome! Your birthday is in #{days} days! Happy birthday in advance!"
+else
+  puts "Happy birthday!"
+end
