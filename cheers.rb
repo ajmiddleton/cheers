@@ -22,7 +22,7 @@ end
 puts "Your name is #{name}"
 name.each_char do |char|
   char = char.upcase
-  if char.index(/[AEFHIMNOSUX]/)
+  if char.index(/[AEFHILMNORSX]/)
     puts "Give me an... #{char}"
   else
     puts "Give me a... #{char}"
